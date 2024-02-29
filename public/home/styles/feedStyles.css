@@ -1,0 +1,106 @@
+.feed{
+    display: flex;
+    flex-direction: column;
+    width: 630px;
+    height: 100%;
+    align-items: center;
+}
+.suggestions{
+    display: flex;
+    flex-direction: column;
+    width: 383px;
+    height: 100%;
+    border-left: 1px solid #3a3a3a;
+}
+.postHeader{
+    height: 42px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+.user img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.more{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.more img{
+    width: 18px;
+    height: 18px;
+    filter: invert(1);
+    scale: 1;
+}
+.posts{
+    display: flex;
+    flex-direction: column;
+    width: 470px;
+    margin-top: 10px;
+}
+.postImage img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.postIcons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.postIcons img{
+    width: 24px;
+    height: 24px;
+    margin-right: 14px;
+    filter: invert(1);
+}
+.lcs{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+.save{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.likes{
+    font-weight: 500;
+    font-size: 14px;
+}
+.caption{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 7px;
+    margin-bottom: 10px;
+}
+.captionText{
+    font-weight: 500;
+    font-size: 13px;
+    margin-left: 10px;
+}
+.userName{
+    font-weight: 600;
+    font-size: 13px;
+}
+.post{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #3a3a3a;
+}

@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+.Container{
+    display: flex;
+    flex-direction: row;
+    background-color: #000000;
+    height: 100vh;
+}
+.homeContainer{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #3a3a3a;
+}
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    overflow-y: auto;
+    width: calc(100% - 220px);
+}
