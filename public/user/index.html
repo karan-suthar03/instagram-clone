@@ -5,11 +5,13 @@
     <title>Title</title>
     <link rel="stylesheet" href="styles/styles.css">
     <script src="../commonScripts/utils.js"></script>
-    <script defer src="../commonScripts/uploadHandler.js"></script>
+    <script src="../commonScripts/userConfirm.js"></script>
     <link rel="stylesheet" href="../commonStyles/main.css">
     <link rel="stylesheet" href="../commonStyles/navigationStyles.css">
     <link rel="stylesheet" href="../commonStyles/uploadStyles.css">
     <link rel="stylesheet" href="../home/styles/feedStyles.css">
+    <script defer src="../commonScripts/uploadHandler.js"></script>
+    <script defer src="scripts/script.js"></script>
 </head>
 <body>
     <div class="Container">
@@ -60,7 +62,45 @@
         </div>
         <div class="mainContainer">
             <div class="mainContent">
-
+                <div class="userProfileArea">
+                    <div class="user_profile">
+                        <img src="../home/Default_pfp.jpg" alt="Instagram">
+                    </div>
+                    <div class="userDetails">
+                        <div class="user_nameAndContact">
+                            <p class="username">Username</p>
+                            <button class="followB">follow</button>
+                            <button class="massageB">massage</button>
+                            <div class="user_more">
+                                <img src="../home/logos/navigationLogo/more.svg" alt="Instagram">
+                            </div>
+                        </div>
+                        <div class="userProfileDetails">
+                            <div class="userPosts">
+                                <p><span>0</span> posts</p>
+                            </div>
+                            <div class="userFollow">
+                                <p><span>0</span> followers</p>
+                            </div>
+                            <div class="userFollowing">
+                                <p><span>0</span> following</p>
+                            </div>
+                        </div>
+                        <div class="userBio">
+                            <p>someone</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="userPostsArea">
+                    <div class="postAreaHeading">
+                        <div><img src="/home/logos/postLogo.svg" alt=""> POSTS</div>
+                    </div>
+                    <div class="postArea">
+                        <div class="noPost">
+                            <img src="/home/logos/photos.svg" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
