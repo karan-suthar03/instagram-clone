@@ -1,0 +1,147 @@
+.createCancel{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.createCancel img{
+    width: 20px;
+    filter: invert(1);
+    cursor: pointer;
+}
+.dropBody img{
+    height: 100%;
+}
+.createCaption{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.capProfile{
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
+.capProfile img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+.createCaption textarea{
+    height: 175px;
+    padding: 10px;
+    border: none;
+    background-color: #262626;
+    color: white;
+    font-size: 16px;
+    resize: none;
+    overflow: auto;
+    width: -webkit-fill-available;
+}
+.createCaption textarea::placeholder{
+    color: #8e8e8e;
+}
+.createCaption textarea:focus{
+    outline: none;
+}
+.capText{
+    height: 200px;
+    overflow: auto;
+}
+.createCaption p{
+    margin-left: 10px;
+}
+.uploadArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.postButton button{
+    height: 36px;
+    margin-top: 10px;
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0 20px;
+}
+.dropBody{
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    height: 400px;
+}
+.createPost{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    transition: opacity 0.3s;
+}
+.createPost.hidden{
+    opacity: 0;
+    pointer-events: none;
+}
+.createContainer{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    background-color: #262626;
+    border-radius: 10px;
+}
+.buttonAndPhoto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 350px;
+    margin: 0 20px;
+}
+.createHead{
+    padding: 11px 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #3a3a3a;
+    font-weight: 600;
+    font-size: 16px;
+}
+.createHead p{
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+}
+.createHead span{
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.createHead .next{
+    color: #0095f6;
+}
+.photoUploadText p{
+    font-weight: 500;
+    font-size: 18px;
+    margin: 10px 0;
+}
+.photoLogo img{
+    width: 89px;
+    filter: invert(1);
+}
