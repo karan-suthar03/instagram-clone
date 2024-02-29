@@ -7,14 +7,20 @@ function loadFeed(){
         }
     }).then(r => r.json())
         .then(data => {
-            console.log(data);
-            data.forEach(post => {
-                console.log(post);
+            if(data.length === 0){
                 let div = document.createElement('div');
                 div.className = 'post';
-                div.innerHTML = createPost(post);
+                div.innerHTML = `<div class="noPosts">No posts to show</div>`;
                 feed.appendChild(div);
-            });
+            }else {
+                data.forEach(post => {
+                    let div = document.createElement('div');
+                    div.className = 'post';
+                    console.log("post");
+                    div.innerHTML = createPost(post);
+                    feed.appendChild(div);
+                });
+            }
         });
 }
 function createPost(post){
