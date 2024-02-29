@@ -41,7 +41,7 @@ function captionAndConfirm() {
     const createHead = document.getElementsByClassName("createHead")[0];
     createHead.innerHTML = "<span class='CancelPost' onclick='toggleCreate()'>Cancel</span>" +
         "<p>Create new post</p>" +
-        "<span class='next' onclick='createPost()'>Confirm</span>";
+        "<span class='next' onclick='uploadPost()'>Confirm</span>";
     const img = document.getElementById("upImage");
     img.style.display = "none";
     const dropBody = document.getElementById("dropBody");
@@ -72,7 +72,7 @@ function handleFileSelect(event) {
         "<span class='next' onclick='captionAndConfirm()'>next</span>";
 }
 
-function createPost() {
+function uploadPost() {
     const img = document.getElementById("upImage");
     const caption = document.getElementById("caption");
 
