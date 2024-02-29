@@ -68,7 +68,7 @@ module.exports = function(db) {
                         res.json({success: false, message: 'Username already exists'});
                         return;
                     }
-                    db.collection('users').insertOne({username, password})
+                    db.collection('users').insertOne({username:username, password: password,bio: '', followers: [], following: [], posts: []})
                         .then((result, err) => {
                             res.json({success: true, message: 'signUP Successful', id: result.insertedId.toString()});
                         })
@@ -89,6 +89,45 @@ module.exports = function(db) {
                 }
                 res.json({success: true, message: 'User exists'});
             })
+    });
+    router.post('/getUser', (req, res) => {
+        let username = req.query.username;
+        let myUsername = req.body.myUsername;
+        let dataSent = {isMe: false, followers: 0, following: 0, bio: '', posts: []};
+        db.collection('users').findOne({_id: new Types.ObjectId(myUsername)})
+            .then((user, err) => {
+                if (err) {
+                    res.json({success: false, message: err});
+                    return;
+                }
+                if (!user) {
+                    res.json({success: false, message: 'User does not exist'});
+                    return;
+                }
+                if (user.username === username) {
+                    dataSent.isMe = true;
+                }
+                db.collection('users').findOne({username: username})
+                    .then((user, err) => {
+                        if(!user){
+                            res.json({success: false, message: 'User does not exist'});
+                            return;
+                        }
+                        console.log(user);
+                        dataSent.followers = user.followers.length;
+                        dataSent.following = user.following.length;
+                        dataSent.bio = user.bio;
+                        db.collection('posts').find({UserId: username}).toArray()
+                            .then((posts, err) => {
+                                if (err) {
+                                    res.json({success: false, message: err});
+                                    return;
+                                }
+                                dataSent.posts = posts;
+                                res.json({success: true, message: 'User exists', data: dataSent});
+                            })
+                    });
+            });
     });
     return router;
 }
