@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>instagram</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/userConfirm.js"></script>
+    <script defer src="scripts/uploadHandler.js"></script>
+    <script defer src="scripts/feed.js"></script>
+</head>
+<!--todo:create post me gadbad -->
+<body>
+    <div class="Container">
+        <div class="createPost hidden" id="createPost">
+            <div class="createCancel" onclick="toggleCreate()">
+                <img src="logos/cancel.svg" alt="">
+            </div>
+            <div class="createContainer">
+                <div class="createHead">
+                    <p>Create new post</p>
+                </div>
+                <div class="dropBody" id="dropBody">
+                </div>
+            </div>
+        </div>
+        <div class="navigationBar">
+            <div class="logoContainer">
+                <img src="logos/instaLogo.svg" alt="Instagram">
+            </div>
+            <div class="menuItems">
+                <div class="home_nav navOp">
+                    <img src="logos/navigationLogo/home.svg" alt="Instagram">
+                    <div class="navT">home</div>
+                </div>
+                <div class="search_nav navOp">
+                    <img src="logos/navigationLogo/search.svg" alt="Instagram">
+                    <div class="navT">search</div>
+                </div>
+                <div class="create_nav navOp" onclick="toggleCreate()">
+                    <img src="logos/navigationLogo/add.svg" alt="Instagram">
+                    <div class="navT">Create</div>
+                </div>
+                <div class="notification_nav navOp">
+                    <img src="logos/navigationLogo/heart.svg" alt="Instagram">
+                    <div class="navT">notifications</div>
+                </div>
+                <div class="profile_nav navOp" onclick="window.location.href = '/profile'">
+                    <img src="Default_pfp.jpg" id="profilePic" alt="Instagram">
+                    <div class="navT">profile</div>
+                </div>
+            </div>
+            <div class="more_nav">
+            </div>
+        </div>
+        <div class="mainContainer">
+            <div class="homeContainer">
+                <div class="feed">
+                    <div class="stories">
+
+                    </div>
+                    <div class="posts" id="feed">
+                    </div>
+                </div>
+                <div class="suggestions">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

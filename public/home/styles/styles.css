@@ -1,0 +1,335 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+.Container{
+    display: flex;
+    flex-direction: row;
+    background-color: #000000;
+    height: 100vh;
+}
+.navigationBar div div img{
+    filter: invert(1);
+    width: 22px;
+    height: 22px;
+    transition: 0.3s;
+}
+.logoContainer img{
+    filter: invert(1);
+    width: 102px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.navigationBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 244px;
+    border-right: 1px solid #3a3a3a;
+}
+.menuItems{
+    display: flex;
+    padding-left: 10px;
+    flex-direction: column;
+    margin-right: 10px;
+}
+.navOp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 10px;
+    margin-top: 8px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.navT{
+    margin-left: 20px;
+}
+.homeContainer{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #3a3a3a;
+}
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    overflow-y: auto;
+    width: calc(100% - 220px);
+}
+.feed{
+    display: flex;
+    flex-direction: column;
+    width: 630px;
+    height: 100%;
+    align-items: center;
+}
+.suggestions{
+    display: flex;
+    flex-direction: column;
+    width: 383px;
+    height: 100%;
+    border-left: 1px solid #3a3a3a;
+}
+.postHeader{
+    height: 42px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+.user img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.more{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.more img{
+    width: 18px;
+    height: 18px;
+    filter: invert(1);
+    scale: 1;
+}
+.posts{
+    display: flex;
+    flex-direction: column;
+    width: 470px;
+    margin-top: 10px;
+}
+.postImage img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.postIcons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.postIcons img{
+    width: 24px;
+    height: 24px;
+    margin-right: 14px;
+    filter: invert(1);
+}
+.lcs{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+.save{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.likes{
+    font-weight: 500;
+    font-size: 14px;
+}
+.caption{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 7px;
+    margin-bottom: 10px;
+}
+.caption{
+}
+.captionText{
+    font-weight: 500;
+    font-size: 13px;
+    margin-left: 10px;
+}
+.userName{
+    font-weight: 600;
+    font-size: 13px;
+}
+.post{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.navOp:hover{
+    background-color: #3a3a3a;
+    cursor: pointer;
+}
+.navOp:hover img{
+    scale: 1.1;
+}
+.createPost{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    transition: opacity 0.3s;
+}
+.createPost.hidden{
+    opacity: 0;
+    pointer-events: none;
+}
+.createContainer{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    background-color: #262626;
+    border-radius: 10px;
+}
+.buttonAndPhoto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 350px;
+    margin: 0 20px;
+}
+.createHead{
+    padding: 11px 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #3a3a3a;
+    font-weight: 600;
+    font-size: 16px;
+}
+.createHead p{
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+}
+.createHead span{
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.createHead .next{
+    color: #0095f6;
+}
+.dropBody{
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    height: 400px;
+}
+.photoLogo img{
+    width: 89px;
+    filter: invert(1);
+}
+.photoUploadText p{
+    font-weight: 500;
+    font-size: 18px;
+    margin: 10px 0;
+}
+.postButton button{
+    height: 36px;
+    margin-top: 10px;
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0 20px;
+}
+.createCancel{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.createCancel img{
+    width: 20px;
+    filter: invert(1);
+    cursor: pointer;
+}
+.dropBody img{
+    height: 100%;
+}
+.createCaption{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.capProfile{
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
+.capProfile img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+.createCaption textarea{
+    height: 175px;
+    padding: 10px;
+    border: none;
+    background-color: #262626;
+    color: white;
+    font-size: 16px;
+    resize: none;
+    overflow: auto;
+    width: -webkit-fill-available;
+}
+.createCaption textarea::placeholder{
+    color: #8e8e8e;
+}
+.createCaption textarea:focus{
+    outline: none;
+}
+.capText{
+    height: 200px;
+    overflow: auto;
+}
+.createCaption p{
+    margin-left: 10px;
+}
+.uploadArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.comment img{
+    scale: 1.5;
+}
+#profilePic{
+    filter: invert(0);
+    scale: 1.3;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
