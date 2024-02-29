@@ -12,7 +12,13 @@ function loadFeed(){
                 console.log(post);
                 let div = document.createElement('div');
                 div.className = 'post';
-                div.innerHTML = `<div class="postHeader">
+                div.innerHTML = createPost(post);
+                feed.appendChild(div);
+            });
+        });
+}
+function createPost(post){
+    return `<div class="postHeader">
                                 <div class="user">
                                     <img src="logos/post.jpg" alt="user">
                                     <div class="userName">${post.username}</div>
@@ -38,14 +44,11 @@ function loadFeed(){
                                         </div>
                                     </div>
                                 </div>
-                                <div class="likes">${post.likes}</div>
+                                <div class="likes">${post.likes} likes</div>
                                 <div class="caption">
                                     <div class="userName">${post.username}</div>
                                     <div class="captionText">this is a caption</div>
                                 </div>
-                            </div>`
-                feed.appendChild(div);
-            });
-        });
+                            </div>`;
 }
 loadFeed();
