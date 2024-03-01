@@ -2,7 +2,6 @@ const {Types} = require("mongoose");
 module.exports = function(db) {
     const express = require('express');
     const router = express.Router();
-    const bodyParser = require('body-parser');
     router.use(express.json({ limit: '10mb' }));
 
     router.post('/login', (req, res) => {
@@ -87,7 +86,7 @@ module.exports = function(db) {
                     res.json({success: false, message: 'User does not exist'});
                     return;
                 }
-                res.json({success: true, message: 'User exists'});
+                res.json({success: true, message: 'User exists',username: user.username});
             })
     });
     router.post('/getUser', (req, res) => {
@@ -117,13 +116,17 @@ module.exports = function(db) {
                         dataSent.followers = user.followers.length;
                         dataSent.following = user.following.length;
                         dataSent.bio = user.bio;
-                        db.collection('posts').find({UserId: username}).toArray()
+                        db.collection('posts').find({UserId: user._id.toString()}).toArray()
                             .then((posts, err) => {
                                 if (err) {
                                     res.json({success: false, message: err});
                                     return;
                                 }
-                                dataSent.posts = posts;
+                                let postsArray = [];
+                                for (let i = 0; i < posts.length; i++) {
+                                    postsArray[i] = posts[i]._id.toString()+'.png';
+                                }
+                                dataSent.posts = postsArray;
                                 res.json({success: true, message: 'User exists', data: dataSent});
                             })
                     });
