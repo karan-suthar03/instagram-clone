@@ -21,6 +21,38 @@ function getCookie(cookieName) {
     }
     return "";
 }
+function createNav(username) {
+    let navbar = document.getElementsByClassName('navigationBar')[0];
+    if (navbar) {
+        navbar.innerHTML = `<div class="logoContainer">
+            <img src="/home/logos/instaLogo.svg" alt="Instagram">
+        </div>
+        <div class="menuItems">
+            <div class="home_nav navOp" onclick="window.location.href = '/home'">
+                <img src="/home/logos/navigationLogo/home.svg" alt="Instagram">
+                <div class="navT">home</div>
+            </div>
+            <div class="search_nav navOp">
+                <img src="/home/logos/navigationLogo/search.svg" alt="Instagram">
+                <div class="navT">search</div>
+            </div>
+            <div class="create_nav navOp" onclick="toggleCreate()">
+                <img src="/home/logos/navigationLogo/add.svg" alt="Instagram">
+                <div class="navT">Create</div>
+            </div>
+            <div class="notification_nav navOp">
+                <img src="/home/logos/navigationLogo/heart.svg" alt="Instagram">
+                <div class="navT">notifications</div>
+            </div>
+            <div class="profile_nav navOp" onclick="window.location.href = '/user/?username=${username}'">
+                <img src="/home/Default_pfp.jpg" id="profilePic" alt="Instagram">
+                <div class="navT">profile</div>
+            </div>
+        </div>
+        <div class="more_nav"></div>`;
+    }
+}
+
 function checkValid() {
     if (document.cookie.includes('userData')) {
         // Return the promise created by fetch
@@ -33,7 +65,7 @@ function checkValid() {
         })
             .then(r => r.json())
             .then(data => {
-                console.log(data);
+                createNav(data.username);
                 return data.success;
             });
     } else {
