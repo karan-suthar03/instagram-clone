@@ -8,7 +8,7 @@ function toggleCreate() {
         dropBody.innerHTML = "<div class='uploadArea'>" +
             "<div class=\"buttonAndPhoto\">\n" +
             "                        <div class=\"photoLogo\">\n" +
-            "                            <img src=\"\../home/logos/photos.svg\" alt=\"\">\n" +
+            "                            <img src=\"\/home/logos/photos.svg\" alt=\"\">\n" +
             "                        </div>\n" +
             "                        <div class=\"photoUploadText\">\n" +
             "                            <p>Drag and drop your photos here</p>\n" +
@@ -28,7 +28,7 @@ function toggleCreate() {
 
 function createCaptionOP(){
     return "                        <div class=\"capProfile\">\n" +
-        "                            <img src=\"../home/Default_pfp.jpg\" alt=\"user\">\n" +
+        "                            <img src=\"/home/Default_pfp.jpg\" alt=\"user\">\n" +
         "                            <p>mera naam</p>\n" +
         "                        </div>\n" +
         "                        <p>Caption</p>\n" +
