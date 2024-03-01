@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="/commonScripts/utils.js"></script>
+    <script src="/commonScripts/userConfirm.js"></script>
+    <link rel="stylesheet" href="/commonStyles/main.css">
+    <link rel="stylesheet" href="/commonStyles/navigationStyles.css">
+    <link rel="stylesheet" href="/commonStyles/uploadStyles.css">
+    <script defer src="/commonScripts/uploadHandler.js"></script>
+    <script defer src="scripts/script.js"></script>
+</head>
+<body>
+<div class="Container">
+    <div class="createPost hidden" id="createPost">
+        <div class="createCancel" onclick="toggleCreate()">
+            <img src="/home/logos/cancel.svg" alt="">
+        </div>
+        <div class="createContainer">
+            <div class="createHead">
+                <p>Create new post</p>
+            </div>
+            <div class="dropBody" id="dropBody">
+            </div>
+        </div>
+    </div>
+    <div class="navigationBar">
+    </div>
+    <div class="mainContainer">
+        <div class="mainContent">
+            <div class="editProfileHeading">
+                <p>Edit Profile</p>
+            </div>
+            <div class="editProfileImage">
+                <div class="cProfile">
+                    <img src="/home/Default_pfp.jpg" alt="Instagram">
+                    <p>Username</p>
+                </div>
+                <div class="changeProfile">
+                    <button>Change Photo</button>
+                </div>
+            </div>
+            <div class="bioHeading">
+                <p>Bio</p>
+            </div>
+            <div class="bioInput">
+                <textarea type="text" placeholder="Bio"></textarea>
+            </div>
+            <div class="submitChanges">
+                <button>Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
