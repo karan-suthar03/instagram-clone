@@ -39,17 +39,18 @@
                     <p>Username</p>
                 </div>
                 <div class="changeProfile">
-                    <button>Change Photo</button>
+                    <input type="file" style="display: none" id="fileInput" accept="image/*" onchange="uploadProfile(event)">
+                    <button onclick="document.getElementById('fileInput').click()">Change Photo</button>
                 </div>
             </div>
             <div class="bioHeading">
                 <p>Bio</p>
             </div>
             <div class="bioInput">
-                <textarea type="text" placeholder="Bio"></textarea>
+                <textarea type="text" placeholder="Bio" id="bioText"></textarea>
             </div>
             <div class="submitChanges">
-                <button>Submit</button>
+                <button onclick="saveChanges()">Submit</button>
             </div>
         </div>
     </div>

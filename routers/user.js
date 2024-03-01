@@ -1,7 +1,8 @@
-const {Types} = require("mongoose");
 module.exports = function(db) {
     const express = require('express');
     const router = express.Router();
+    const mongoose = require("mongoose");
+    const Types = mongoose.Types;
     router.use(express.json({ limit: '10mb' }));
 
     router.post('/login', (req, res) => {
@@ -131,6 +132,45 @@ module.exports = function(db) {
                             })
                     });
             });
+    });
+    router.get('/getUserDetails', (req, res) => {
+        let userId = req.query.userId;
+        console.log(userId);
+        db.collection('users').findOne({_id: new Types.ObjectId(userId)})
+            .then((user, err) => {
+                if (err) {
+                    res.json({success: false, message: err});
+                    return;
+                }
+                if (!user) {
+                    res.json({success: false, message: 'User does not exist'});
+                    return;
+                }
+                let profile;
+                if(user.profile === 'default'){
+                    profile = '/home/Default_pfp.jpg';
+                }else{
+                    profile = '/user/profiles/'+user.username.toString()+'.png';
+                }
+                res.json({success: true, message: 'User exists', data: {username: user.username, bio: user.bio, profile: profile}});
+            });
+    });
+    router.post('/editProfile', (req, res) => {
+        let data = req.body;
+        if(data.isProfile){
+            let profile = data.profile;
+            let base64Data = profile.replace(/^data:image\/png;base64,/, "");
+            db.collection('users').findOne({_id: new Types.ObjectId(data.id)}).then((result, err) => {
+                require("fs").writeFile('public/user/profiles/'+result.username+'.png', base64Data, 'base64', function(err) {
+                    console.log(err);
+                });
+                db.collection('users').updateOne({_id: new Types.ObjectId(data.id)}, {$set: {profile: 'changed'}});
+            });
+        }
+        if(data.isBio){
+            db.collection('users').updateOne({_id: new Types.ObjectId(data.id)}, {$set: {bio: data.bioText}});
+        }
+        res.json({success: true, message: 'Changes saved'});
     });
     return router;
 }
